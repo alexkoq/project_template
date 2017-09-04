@@ -1,0 +1,16 @@
+body {
+  color: pink;
+}
+
+body footer {
+  color: red;
+}
+
+.block {
+  height: 300px;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
