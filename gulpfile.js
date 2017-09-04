@@ -1,12 +1,15 @@
-var gulp      = require('gulp'), // Подключаем Gulp
-    sass        = require('gulp-sass'), //Подключаем Sass пакет,
-    browserSync = require('browser-sync'); // Подключаем Browser Sync
+var gulp         = require('gulp'), // Подключаем Gulp
+    sass         = require('gulp-sass'),
+    sourcemaps   = require('gulp-sourcemaps'), //Подключаем Sass пакет,
+    browserSync  = require('browser-sync'), // Подключаем Browser Sync
     autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
 
 gulp.task('sass', function(){ // Создаем таск Sass
-    return gulp.src('app/sass/**/*.sass') // Берем источник
-        .pipe(sass({outputStyle: 'expanded'})) // Преобразуем Sass в CSS посредством gulp-sass
+    return gulp.src('app/sass/style.sass') // Берем источник
+        .pipe(sourcemaps.init())
+        .pipe(sass({sourcemap: true, outputStyle: 'expanded'}).on('error', sass.logError)) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: false})) // Создаем префиксы
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });

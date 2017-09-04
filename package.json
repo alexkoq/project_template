@@ -1,5 +1,5 @@
 {
-  "name": "project_template",
+  "name": "landing_strah",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexkoq/project_template.git"
+    "url": "git+https://github.com/alexkoq/landing_strah.git"
   },
   "author": "Alex Khinoy",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1"
   }
 }
