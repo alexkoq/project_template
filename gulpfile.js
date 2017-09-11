@@ -28,7 +28,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 gulp.task('watch', ['browser-sync', 'sass'], function() {
     gulp.watch('app/sass/**/*.sass', ['sass']); // Наблюдение за sass файлами в папке sass
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
-    gulp.watch('app/js/**/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
+    gulp.watch('app/script/**/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
 });
 
 gulp.task('clean', function() {
@@ -48,10 +48,9 @@ gulp.task('img', function() {
 
 gulp.task('build', ['clean', 'img', 'sass'], function() {
 
-    var buildCss = gulp.src([ // Переносим библиотеки в продакшен
-        'app/css/main.css',
-        'app/css/libs.min.css'
-        ])
+    var buildCss = gulp.src( // Переносим библиотеки в продакшен
+        'app/css/**/*.css'
+        )
     .pipe(gulp.dest('dist/css'))
 
     var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
