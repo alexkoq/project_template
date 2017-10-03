@@ -5,6 +5,8 @@ var gulp         = require('gulp'), // Подключаем Gulp
     autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов
     del          = require('del'), // Подключаем библиотеку для удаления файлов и папок
     cache        = require('gulp-cache'); // Подключаем библиотеку кеширования
+    imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
+    pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
 
 gulp.task('sass', function(){ // Создаем таск Sass
     return gulp.src('app/sass/**/*.sass') // Берем источник
